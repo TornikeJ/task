@@ -1,0 +1,26 @@
+<div class="login" ng-app="loginApp" ng-controller="loginController">
+    <form name="loginForm">
+        <h3>
+           {{'greeting'|translate}}
+        </h3>
+        <div class="form-group">
+            <input id="username" ng-class="{'error': (checkValidation && loginForm.username.$error.required)||errorMessage}" name="username" type="text"  ng-model="username" class="form-control" placeholder="{{'username_login'|translate}}" required>
+        </div>
+        <div class="form-group">
+            <input id="password" ng-class="{'error': (checkValidation && loginForm.password.$error.required)||errorMessage}" name="password" autocomplete="new-password" ng-model="password" type="password" class="form-control" placeholder="{{'password_login'|translate}}" required>
+        </div>
+        <span ng-show="errorMessage" class="error">{{'wrong_credentials'|translate}}</span>
+        <span ng-show="(loginForm.$invalid && checkValidation) && !errorMessage" class="error">{{'empty_login'|translate}}</span>
+        <div class="form-group">
+            <p class="forgot-password"><a href="#">{{'forgot_password'|translate}}</a></p>
+        </div>
+        <button 
+            type="button"
+            ng-click="login(loginForm)" 
+            class="button btn-primary"
+        >{{'login'|translate}}</button>
+        <p class="account-check">
+            {{'check_registered'|translate}} <a ng-click="redirectToRegister()">{{'register'|translate}}</a>
+        </p>
+    </form>
+</div>

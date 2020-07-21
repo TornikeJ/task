@@ -1,0 +1,47 @@
+<div class="container" ng-app="userApp" ng-controller="userController">
+    <form method="post" name="userForm" class="user">
+        <span ng-show="errorMessage" class="user error">{{errorMessage}}</span>
+        <h3 ng-show="name" class="user greeting">{{('greeting'|translate)+ ' '+name}}</h3>
+        <div class="form-group">
+            <label for="username">{{'username_label'|translate}}</label>
+            <div>
+                <input disabled id="username" name="username" type="text" ng-model="username" class="form-control" placeholder="{{'username_label'|translate}}" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="name">{{'name_label'|translate}}</label>
+            <div>
+                <input id="name" name="name" type="text" ng-model="name" class="form-control" placeholder="{{'name_label'|translate}}" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="lastname">{{'lastname_label'|translate}}</label>
+            <div>
+                <input id="lastname" name="lastname" type="text" class="form-control" placeholder="{{'lastname_label'|translate}}" ng-model="lastname" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">{{'email_label'|translate}}</label>
+            <div>
+                <input id="email" name="email" type="email" class="form-control" placeholder="{{'email_label'|translate}}" ng-model="email" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">{{'password_label'|translate}}</label>
+            <div>
+                <input 
+                    id="password" 
+                    name="password" 
+                    type="password" 
+                    class="form-control" 
+                    placeholder="{{'password_label'|translate}}" 
+                    ng-model="password" 
+                    pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-_]).{8,}$"
+                    required
+                    disabled
+                    minlength="8" autocomplete="new-password"
+                >
+            </div>
+        </div>
+    </form>
+</div>

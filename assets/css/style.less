@@ -1,0 +1,558 @@
+@import 'loader.less';
+
+@color1: #009c92;
+@color2: #ffffff;
+@color3: black;
+@color4: #e05b5b;;
+@color5:#b8dad8;
+@color6:#63afaa;
+@color7:#f1f1f1;
+@color8:#f5f5f5;
+@color9:#868c8b;
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  background: url("/assets/images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
+}
+
+.container {
+  display: flex;
+  padding: 0.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+body {
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  background: @color2;
+
+  .logo {
+    width: 120px;
+  }
+
+  .container {
+    justify-content: space-between;
+  }
+}
+
+.dropdown {
+  position: relative;
+  color: @color1;
+  cursor: pointer;
+  font-size: 25px;
+
+  .menu {
+    display: none;
+    position: absolute;
+    right: 90%;
+    width: 150px;
+    padding: 10px;
+    background: @color2;
+    text-align: center;
+    box-shadow: 0px 0px 1px 0px;
+    border-radius: 6px;
+
+    &.show {
+      display: block;
+    }
+
+    &.hide {
+      display: none;
+    }
+
+    .language-toggle {
+      font-size: 14px;
+    }
+  }
+}
+
+.language-toggle {
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  
+  > span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    background: @color8;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 2px 10px;
+     
+    .flag {
+      padding-left: 10px;
+    }
+  }
+  
+}
+
+.login{
+  height: 100vh;
+
+  form{
+    h3{
+      color: @color1;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 4rem 3rem 4rem;
+  width: 30%;
+  background: @color8;
+  height: 100%;
+
+  &.user{
+    width: 100%;
+    padding: 0rem 2rem 3rem 2rem;
+    border: 0;
+    background: @color8;
+  }
+
+  .account-check{
+    color: @color9;
+    text-align: center;
+    font-size: 12px;
+    
+    a {
+      cursor: pointer;
+      color:@color1
+    }
+  }
+}
+
+.form{
+  &-group {
+    display: flex;
+    margin-bottom: 1rem;
+    flex-direction: column;
+
+    label {
+      align-self: start;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      color: @color1;
+    }
+    
+     > div {
+      min-width: 77%;
+    }
+  }
+  
+  &-control {
+    width: 100%;
+    height: 50px;
+    border: 1px solid transparent;
+    background:@color2;
+    border-radius: 6px;
+    padding: 0 10px;
+    line-height: 20px;
+    font-size: 14px;
+  }
+}
+
+
+
+.forgot-password{
+  a{
+    font-size: 12px;
+    text-decoration: none;
+    color: @color9;
+  }
+}
+
+input.error,
+.register input.ng-touched.ng-invalid {
+  color: initial;
+  border-color: @color4;
+  outline-color: @color4;
+}
+
+.user {
+  &.greeting{
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
+
+  &.error {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 2rem;
+  }
+
+}
+
+
+.cards {
+  padding: 2rem;
+  width: 100%;
+  
+  .data {
+    display: flex;
+   
+    .circles{
+      display:flex;
+      justify-content: center;
+
+      .circle{
+        width: 1.3rem;
+        height: 1.3rem;
+        border: 1px solid @color1;
+        border-radius: 50%;
+        margin-right: 10px;
+
+        &:last-child{
+          margin-right: 0;
+        }
+
+        &.active{
+          background: @color1;
+        }
+      }
+    }
+    .info{
+      flex-grow: 1;
+      text-align: center;
+    }
+  }
+  
+  img {
+    width: 50%;
+  }
+}
+
+
+.dashboard {
+  display: flex;
+  padding: 2rem;
+  width: 100%;
+  align-items: flex-start;
+  background: @color8;
+  min-height: 510px;
+  color: @color1;  
+  height: 100vh;
+
+
+  .form-control{
+    background: @color7;
+  }
+
+  .tabs {
+    .tab{
+      width: 10rem;
+      cursor: pointer;
+
+      &.active {
+        font-weight: 700;
+      }
+
+      &:hover{
+        cursor: pointer;
+        font-weight: 700;
+      }
+    }
+
+  }
+  
+  .content {
+    flex-grow: 1;
+  }
+  
+  .container {
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+}
+
+
+.button {
+  padding: 11px;
+  min-height: 40px;
+  border: 0;
+  border-radius: 6px;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  &-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0rem 0rem 0rem;
+  }
+}
+
+.btn{
+  &-primary {
+    background: @color1;
+    color: @color2;
+    
+    &:hover {
+      background: @color6;
+    }
+          
+    &:disabled {
+      background: @color6;
+    }
+  }
+
+  &-link {
+    background: transparent;
+    padding: 10px;
+    font-size: 14px;
+    min-height: 35px;
+    min-width: 70px;
+    color: @color1;
+    
+    &:hover {
+      color: @color5;
+    }
+  }
+  
+  &-secondary {
+    border: 1px solid @color1;
+    background: transparent;
+    color: @color1;
+    
+    &:hover {
+      background: @color1;
+      color: @color2;
+    }
+  }
+}
+
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.error {
+  color: @color4;
+  font-size: 11px;
+}
+
+@media only screen and (max-width: 1020px) {
+  form {
+    width: 45%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .user {
+    .form-group{
+      flex-direction: column;
+      
+      label {
+        align-self: start;
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+}
+@media only screen and (max-width: 800px) {
+  .cards {
+    .data{
+      flex-direction: column;
+
+      .card{
+        margin-bottom: 1rem;
+      }
+
+      .info{
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+    
+    img {
+      align-self: center;
+      margin-right:0;
+      width: 60%;
+      margin-bottom: 2rem;
+    }
+  }
+
+}
+@media only screen and (max-width: 750px) {
+  form {
+    width: 60%;
+  }
+
+  .form-group {
+    flex-direction: column;
+    
+    label {
+      align-self: start;
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 650px) {
+  .button-group {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    
+    .button:last-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .cards {
+    img{
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  form {
+    width: 70%;
+  }
+
+  .button-group {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .dashboard {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    
+    form {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .wrapper{
+    background-image: none;
+  }
+
+  .forgot-password{
+    text-align: center;
+  }
+  
+  .register{
+    form{
+      padding-top: 2rem;
+    }
+  }
+
+  form {
+    width: 80%;
+    margin: 0 auto;
+    padding-top:0;
+    padding-bottom:0;
+    border:0;
+    background: @color2;
+  }
+
+  .form-group{
+    label{
+      display: none;
+    }
+  }
+
+  .form-control{
+    background: @color7;
+  }
+
+  .container {
+    padding: 0.5rem 1rem;
+  }
+
+  .button-group {
+    padding-top:1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .dashboard{
+    .tabs{
+      .tab{
+        width: initial;
+        padding: 0 0.5rem;
+      }
+    }
+  }
+
+  .cards {
+    padding: 0;
+    padding-top: 8px;
+    
+    img {
+      width: 90%;
+    }
+  
+    select {
+      text-overflow: ellipsis;
+    }
+  
+    .data {
+      p{
+        &:first-child{
+          overflow-wrap: anywhere;
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+  .button-group {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .dashboard {
+    .container{
+      padding-left: 0rem;
+    }
+  }
+
+  form {
+    width: 100%;
+  }
+}

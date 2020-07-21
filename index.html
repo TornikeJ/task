@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+  <script data-require="angular-translate@*" data-semver="2.5.0"
+    src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.18.3/angular-translate.min.js">
+    </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet/less" type="text/css" href="assets/css/style.less"/>
+  <script src="//cdn.jsdelivr.net/npm/less" ></script>
+  <style> .ng-cloak { display: none !important; } </style>
+</head>
+
+<body ng-app="myApp" ng-controller="translateController">
+  <header>
+    <nav class="nav">
+      <div class="container" ng-controller="dropdownController">
+        <a href="#">
+          <img class="logo" src="assets/images//Halyk-logo.svg" alt="Halyk Logo">
+        </a>
+        <div ng-hide="User" class="language-toggle ng-cloak">
+            <span ng-show="selectedLanguage==='en'" ng-click="changeLanguage('ge')" class="language">
+              Eng
+              <img class="flag" src="https://www.countryflags.io/gb/flat/24.png" alt="UK Flag">
+            </span>
+            <span ng-show="selectedLanguage==='ge'" ng-click="changeLanguage('en')" class="language">
+              Geo
+              <img class="flag" src="https://www.countryflags.io/ge/flat/24.png" alt="GEO Flag">
+            </span>
+        </div>
+        <div ng-show="User" class="dropdown">
+          <div ng-model=dropdown ng-click="toggleDropdown()">
+            <i class="fa fa-caret-square-o-down" aria-hidden="true"></i>
+          </div>
+          <div class="menu" ng-class="{'show':dropdown,'hide':!dropdown}">
+            <div class="language-toggle">
+              <span ng-show="selectedLanguage==='en'" ng-click="changeLanguage('ge')" class="language">
+                Eng
+                <img class="flag" src="https://www.countryflags.io/gb/flat/32.png" alt="UK Flag">
+              </span>
+              <span ng-show="selectedLanguage==='ge'" ng-click="changeLanguage('en')" class="language">
+                Geo
+                <img class="flag" src="https://www.countryflags.io/ge/flat/32.png" alt="GEO Flag">
+              </span>
+            </div>
+            <button ng-click="logout()" class="button btn-link">{{'logout'|translate}}</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div ng-controller="loadController" ng-show="!loadFinished">
+    <div class="lds-default">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  
+  <div ng-view ng-controller="loadController" ng-show="loadFinished" class="wrapper"></div>
+
+  <script src="app/app.module.js"></script>
+  <script src="app/components/Login/loginCtrl.js"></script>
+  <script src="app/components/Register/registerCtrl.js"></script>
+  <script src="app/components/User/userCtrl.js"></script>
+  <script src="app/components/Cards/cardsCtrl.js"></script>
+  <script src="app/components/Dashboard/dashboardCtrl.js"></script>
+  <script src="assets/js/translate.js"></script>
+  <script src="assets/js/service.js"></script>
+
+</body>
+
+</html>

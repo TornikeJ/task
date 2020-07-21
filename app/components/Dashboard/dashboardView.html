@@ -1,0 +1,12 @@
+<div ng-app="dashboardApp" ng-controller="dashboardController">
+    <div class="dashboard">
+        <div class="tabs">
+            <p class="tab" ng-class="{active: selectedTab==='account' }" ng-click="selectTab('account')">{{'account_information'|translate}}</p>
+            <p class="tab" ng-class="{active: selectedTab==='cards' }" ng-click="selectTab('cards')">{{'cards_information'|translate}}</p>
+        </div>
+        <div class="content">
+            <div ng-show="selectedTab==='account'" ng-include src="'app/components/User/userView.html'"></div>
+            <div ng-show="selectedTab==='cards'" ng-include src="'app/components/Cards/cardsView.html'"></div>
+        </div>
+    </div>
+</div>

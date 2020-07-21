@@ -1,0 +1,17 @@
+{
+  "name": "halyk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "dependencies": {
+    "angular": "^1.8.0",
+    "angular-ui-router": "^1.0.26",
+    "font-awesome": "^4.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

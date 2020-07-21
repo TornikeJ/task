@@ -1,0 +1,15 @@
+<div class="container cards" ng-app="cardsApp" ng-controller="cardsController">
+    <div class="cards">
+        <div ng-show="cards.length > 1" class="data">
+            <img ng-src="{{cardImage}}" alt="card">
+            <div class="info">
+                <p>{{'card_number'|translate}} {{cards[selectedCard].cardNumber}}</p>
+                <p>{{'card_type'|translate}} {{cards[selectedCard].type | uppercase}}</p>
+                <p>{{'card_amount'|translate}} {{cards[selectedCard].amount | currency}}</p>
+                <div class="circles">
+                    <div class="circle" ng-class="{'active':selectedCard === $index}" ng-click="selectCard($index)" ng-repeat="card in cards"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
